@@ -1,7 +1,9 @@
 // == Import npm
 import React from 'react';
 // import { Link } from 'react-router-dom';
+import StyledButton from 'src/GlobalStyles/StyledButton';
 import Layout from '../Layout';
+
 
 // == Import
 
@@ -12,8 +14,8 @@ const HomePage = () => (
       <h1>Devenez cobaye dès aujourd'hui.</h1>
     </div>
     <div>
-      <button type="button">Inscription</button>
-      <button type="button">Connexion</button>
+      <StyledButton type="button">Inscription</StyledButton>
+      <StyledButton type="button">Connexion</StyledButton>
     </div>
     <div>
       {/* <Link>Ou découvrez le monde de la recherche.</Link> */}

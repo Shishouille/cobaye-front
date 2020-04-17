@@ -1,13 +1,13 @@
 import React from 'react';
-import { Navigation, Footer, Sider } from '.';
+import { Navigation, Footer, StyledLayout } from '.';
 
 const Layout = ({ children }) => (
-  <div>
+  <StyledLayout>
     <Navigation />
     <main>
       {children}
     </main>
     <Footer />
-  </div>
+  </StyledLayout>
 );
 export default Layout;

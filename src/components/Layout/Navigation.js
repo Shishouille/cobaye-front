@@ -2,9 +2,9 @@ import React from 'react';
 
 const Navigation = () => {
   return (
-    <div>
+    <header>
       Hello Navigation
-    </div>
+    </header>
   )
 }
 
