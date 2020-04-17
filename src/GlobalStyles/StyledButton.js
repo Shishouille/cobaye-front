@@ -4,7 +4,7 @@ import theme from 'src/styles/theme';
 const StyledButton = styled.button`
     background-color: white;
     border-radius: .5em;
-    width: 20%;
+    width: 20em;
     text-transform: uppercase;
     height: 3em;
     color: #00032E;
