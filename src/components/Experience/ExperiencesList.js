@@ -1,11 +1,23 @@
-import React from 'react'
+import React from 'react';
 
-const ExperiencesList = () => {
-  return (
+import Layout from 'src/components/Layout';
+import ExperiencePreview from './ExperiencePreview';
+
+const ExperiencesList = () => (
+  <Layout>
+    <h1>Experiences</h1>
     <div>
-      Hello ExperiencesList
+      <ExperiencePreview />
+      <ExperiencePreview />
+      <ExperiencePreview />
+      <ExperiencePreview />
+      <ExperiencePreview />
+      <ExperiencePreview />
+      <ExperiencePreview />
+      <ExperiencePreview />
+      <ExperiencePreview />
     </div>
-  )
-}
+  </Layout>
+);
 
 export default ExperiencesList;

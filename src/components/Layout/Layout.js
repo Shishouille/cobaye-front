@@ -1,13 +1,18 @@
 import React from 'react';
-import { Navigation, Footer, StyledLayout } from '.';
+import {
+  Navigation, Footer, Sider, StyledLayout,
+} from '.';
 
 const Layout = ({ children }) => (
   <StyledLayout>
-    <Navigation />
-    <main>
-      {children}
-    </main>
-    <Footer />
+    <Sider />
+    <div className="layout-content">
+      <Navigation />
+      <main>
+        {children}
+      </main>
+      <Footer />
+    </div>
   </StyledLayout>
 );
 export default Layout;
