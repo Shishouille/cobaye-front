@@ -15,16 +15,19 @@ const Sider = () => (
     <div className="sider-main-menu">
       <NavLink
         to="/experiences"
+        activeClassName="sider-link--active"
       ><img src="" alt="" />
         Expériences
       </NavLink>
       <NavLink
         to="/profil"
+        activeClassName="sider-link--active"
       ><img src="" alt="" />
         Profil
       </NavLink>
       <NavLink
         to="/messages"
+        activeClassName="sider-link--active"
       ><img src="" alt="" />
         Messages
       </NavLink>
@@ -32,9 +35,11 @@ const Sider = () => (
     <div className="sider-secondary-menu">
       <NavLink
         to="/parametres"
+        activeClassName="sider-link--active"
       ><img src="" alt="" />
         Paramètres
       </NavLink>
+      <p>Déconnexion</p>
     </div>
   </nav>
 );

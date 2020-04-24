@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import theme from 'src/styles/theme';
 
 const StyledButton = styled.button`
+    border: none;
     background-color: white;
     border-radius: .5em;
-    width: 20em;
+    width: 10em;
     text-transform: uppercase;
     height: 3em;
     color: #00032E;

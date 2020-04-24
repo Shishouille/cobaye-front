@@ -2,12 +2,18 @@ import React from 'react';
 
 import Layout from 'src/components/Layout';
 import ExperienceFullHeader from './ExperienceFullHeader';
+import ExperienceFullFooter from './ExperienceFullFooter';
+import StyledExperience from './StyledExperience';
 
 const ExperienceDescription = () => (
   <Layout>
     <ExperienceFullHeader />
-    <article>
-      <section>
+    <StyledExperience>
+      <div className="exp-title">
+        <img src="" alt="Genre/Domaine" />
+        <h1>Nom de l'expérience</h1>
+      </div>
+      <section className="exp-header">
         <div>
           <img src="" alt="" />
           <h2>Nom de l'université</h2>
@@ -36,7 +42,8 @@ const ExperienceDescription = () => (
           <p>...</p>
         </div>
       </section>
-    </article>
+    </StyledExperience>
+    <ExperienceFullFooter />
   </Layout>
 );
 

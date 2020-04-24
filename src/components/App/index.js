@@ -3,12 +3,17 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 // == Import
-import ExperiencesList from 'src/components/Experience/ExperiencesList';
+import ExperiencesList from 'src/components/Experience/List/ExperiencesList';
+import ExperienceDescription from 'src/components/Experience/Full/ExperienceDescription';
+import ExperienceCriterias from 'src/components/Experience/Full/ExperienceCriterias';
 
+import SignIn from 'src/components/Authentification/SignIn';
+import SignUp from 'src/components/Authentification/SignUp';
 import HomePage from '../HomePage';
-import ProfilePage from '../Profile/ProfilePage';
+import ProfilePage from '../Profile/Home';
 import MessageBox from '../MessageBox';
 import Settings from '../Settings';
+
 
 // == Composant
 const App = () => (
@@ -19,6 +24,18 @@ const App = () => (
         exact
       >
         <HomePage />
+      </Route>
+      <Route
+        path="/connexion"
+        exact
+      >
+        <SignIn />
+      </Route>
+      <Route
+        path="/inscription"
+        exact
+      >
+        <SignUp />
       </Route>
       {/* <Route
           path="/404"
@@ -33,10 +50,16 @@ const App = () => (
         <ExperiencesList />
       </Route>
       <Route
-        path="/experiences"
+        path="/experience/:id"
         exact
       >
-        <ExperiencesList />
+        <ExperienceDescription />
+      </Route>
+      <Route
+        path="/experience/:id/criteres"
+        exact
+      >
+        <ExperienceCriterias />
       </Route>
       <Route
         path="/profil"

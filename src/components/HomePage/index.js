@@ -15,15 +15,15 @@ const HomePage = () => (
     <div className="home-display">
       <img className="home-pic" src={homeImage} alt="HomePage" />
     </div>
-    <section className="home-display">
+    <section className="home-display home-title">
       <div>
         <h1>Devenez cobaye dès aujourd'hui.</h1>
       </div>
-      <div>
-        <StyledButton type="button">Inscription</StyledButton>
-        <StyledButton type="button">Connexion</StyledButton>
+      <div className="home-button">
+        <Link to="/inscription"><StyledButton type="button">Inscription</StyledButton></Link>
+        <Link to="/connexion"><StyledButton type="button">Connexion</StyledButton></Link>
       </div>
-      <div>
+      <div className="home-exp">
         <Link to="/experiences">Ou découvrez le monde de la recherche.</Link>
       </div>
     </section>
