@@ -4,7 +4,7 @@ const ExperienceCard = () => {
   return (
     <article className="exp-card">
       <div className="exp-img">
-        <img src="" alt=""/>
+        <img src="" alt="" />
       </div>
       <div className="exp-content">
         <p>Nom de l'exp</p>

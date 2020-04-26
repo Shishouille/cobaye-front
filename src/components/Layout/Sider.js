@@ -17,13 +17,19 @@ const Sider = () => (
         to="/experiences"
         activeClassName="sider-link--active"
       ><img src="" alt="" />
-        Expériences
+        Parcourir
+      </NavLink>
+      <NavLink
+        to="/experience/creation"
+        activeClassName="sider-link--active"
+      ><img src="" alt="" />
+        Créer une expérience
       </NavLink>
       <NavLink
         to="/profil"
         activeClassName="sider-link--active"
       ><img src="" alt="" />
-        Profil
+        Tableau de Bord
       </NavLink>
       <NavLink
         to="/messages"
@@ -39,7 +45,9 @@ const Sider = () => (
       ><img src="" alt="" />
         Paramètres
       </NavLink>
-      <p>Déconnexion</p>
+      <Link to="/">
+        <img src="" alt="" /> Déconnexion
+      </Link>
     </div>
   </nav>
 );

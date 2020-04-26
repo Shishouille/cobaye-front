@@ -15,9 +15,9 @@ const StyledHome = styled.div`
       right: -5em;
       bottom: -5em;
       border-radius: 50%;
-      width: 20em;
+      width: 30em;
       opacity: 10%;
-      height: 20em;
+      height: 30em;
       background-color: #E3EBFE;
     }
     .home-display {

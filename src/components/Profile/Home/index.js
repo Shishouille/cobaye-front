@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from 'src/components/Layout';
 
 import ExperienceCard from './ExperienceCard';
+import CreatedExperience from './CreatedExperience';
 import ProfileCalendar from './ProfileCalendar';
 import ProfileNotifications from './ProfileNotifications';
 
@@ -23,6 +24,10 @@ const ProfilePage = () => (
         <ExperienceCard />
         <ExperienceCard />
         <ExperienceCard />
+      </div>
+      <div>
+        <h2>Vos Expériences</h2>
+        <CreatedExperience />
       </div>
       <div className="profile-main">
         <ProfileNotifications />

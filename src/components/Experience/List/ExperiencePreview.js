@@ -10,6 +10,7 @@ const ExperiencePreview = () => (
       <img src="" alt="Domaine" />
       <div className="exp-desc">
         <h2>Nom de l'expérience</h2>
+        <h3>Université</h3>
         <StyledTag>Mots-clés</StyledTag>
         <div className="exp-time">
           <p> <span role="img" aria-label="Durée">🕙</span>Durée</p>

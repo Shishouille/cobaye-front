@@ -2,13 +2,20 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+// Import Style
+import '@pathofdev/react-tag-input/build/index.css';
+import 'react-nice-dates/build/style.css';
+
 // == Import
 import ExperiencesList from 'src/components/Experience/List/ExperiencesList';
+import ExperienceCreation from 'src/components/Experience/Creation/ExperienceCreation';
+import ExperienceEdition from 'src/components/Experience/Edit/ExperienceEdit';
 import ExperienceDescription from 'src/components/Experience/Full/ExperienceDescription';
 import ExperienceCriterias from 'src/components/Experience/Full/ExperienceCriterias';
 
 import SignIn from 'src/components/Authentification/SignIn';
 import SignUp from 'src/components/Authentification/SignUp';
+import SignUpScientist from 'src/components/Authentification/SignUp/SignupScientist';
 import HomePage from '../HomePage';
 import ProfilePage from '../Profile/Home';
 import MessageBox from '../MessageBox';
@@ -37,6 +44,12 @@ const App = () => (
       >
         <SignUp />
       </Route>
+      <Route
+        path="/inscription/chercheur"
+        exact
+      >
+        <SignUpScientist />
+      </Route>
       {/* <Route
           path="/404"
         >
@@ -48,6 +61,18 @@ const App = () => (
         exact
       >
         <ExperiencesList />
+      </Route>
+      <Route
+        path="/experience/creation"
+        exact
+      >
+        <ExperienceCreation />
+      </Route>
+      <Route
+        path="/experience/edition/:id"
+        exact
+      >
+        <ExperienceEdition />
       </Route>
       <Route
         path="/experience/:id"

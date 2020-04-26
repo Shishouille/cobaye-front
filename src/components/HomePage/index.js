@@ -8,7 +8,6 @@ import homeImage from 'src/assets/images/homeImage.svg';
 import StyledButton from 'src/GlobalStyles/StyledButton';
 import StyledHome from './StyledHome';
 
-
 // == Composant
 const HomePage = () => (
   <StyledHome>
