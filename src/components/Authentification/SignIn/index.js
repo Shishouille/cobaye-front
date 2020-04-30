@@ -11,16 +11,15 @@ const SignIn = () => (
     <h1>Connexion</h1>
     <Formik
       initialValues={{
-        firstName: '',
-        lastName: '',
         email: '',
-        acceptedTerms: false,
-        jobType: '',
+        password: '',
       }}
       validationSchema={Yup.object({
         email: Yup.string()
-          .email('Invalid email address')
-          .required('Required'),
+          .email('Votre email n\'est pas valide.')
+          .required('Ce champs est requis.'),
+        password: Yup.string()
+          .required('Votre mot de passe est requis.'),
       })}
       onSubmit={(values, { setSubmitting }) => {
         // values retourne un objet avec toutes mes valeurs

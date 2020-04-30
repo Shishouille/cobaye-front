@@ -27,30 +27,22 @@ const ExperienceCreation = () => {
       <h1>Création d'expérience</h1>
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
-          email: '',
+          title: '',
+          description: '',
+          questionnaryLink: '',
           expType: '',
         }}
         validationSchema={Yup.object({
-          firstName: Yup.string()
-            .max(15, 'Must be 15 characters or less')
-            .required('Required'),
-          lastName: Yup.string()
-            .max(20, 'Must be 20 characters or less')
-            .required('Required'),
-          email: Yup.string()
-            .email('Invalid email address')
-            .required('Required'),
-          acceptedTerms: Yup.boolean()
-            .required('Required')
-            .oneOf([true], 'You must accept the terms and conditions.'),
-          gender: Yup.string()
-            .oneOf(
-              ['woman', 'man', 'other'],
-              'Genre non identifié',
-            )
-            .required('Required'),
+          title: Yup.string()
+            .max(15, 'Votre titre est trop long')
+            .required('Ce champ est requis.'),
+          time: Yup.string()
+            .required('Ce champ est requis.'),
+          description: Yup.string()
+            .min(20, 'Votre description doit être fournie.')
+            .required('Ce champ est requis.'),
+          questionnaryLink: Yup.string()
+            .url('Votre lien ne correspond pas à une URL.'),
         })}
         onSubmit={(values, { setSubmitting }) => {
         // values retourne un objet avec toutes mes valeurs
@@ -65,9 +57,9 @@ const ExperienceCreation = () => {
             <h2>Général</h2>
             <Input
               label="Nom de l'Expérience"
-              name="firstName"
+              name="title"
               type="text"
-              placeholder="Sherlock"
+              placeholder="Nom de votre expérience"
             />
             <ReactTagInput
               tags={tags}
@@ -76,9 +68,8 @@ const ExperienceCreation = () => {
             />
             <TextArea
               label="Description"
-              name="lastName"
-              type="text"
-              placeholder="Holmes"
+              name="description"
+              placeholder="Insérez la description de votre expérience ici."
             />
             <Select label="Type de Passation" name="expType">
               <option value="">Quel est le type de Passation ?</option>
@@ -95,11 +86,23 @@ const ExperienceCreation = () => {
               type="url"
             />
           )}
-            <Input
+            <Select
               label="Durée"
               name="time"
-              type="text"
-            />
+            >
+              <option value="">Sélectionnez votre durée : </option>
+              <option value="5">5min</option>
+              <option value="10">10min</option>
+              <option value="15">15min</option>
+              <option value="30">30min</option>
+              <option value="45">45min</option>
+              <option value="100">1h00</option>
+              <option value="115">1h15</option>
+              <option value="130">1h30</option>
+              <option value="145">1h45</option>
+              <option value="200">2h</option>
+              <option value="250">2h+</option>
+            </Select>
             <Input
               label="Nombre d'étapes"
               name="steps"

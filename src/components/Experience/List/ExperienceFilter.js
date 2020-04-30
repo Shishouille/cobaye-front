@@ -5,7 +5,6 @@ import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 
 const modifiers = {
   disabled: (date) => getDay(date) === 6, // Disables Sundays
-  disabled: (date) => getDay(date) === 6, // Disables Saturdays
 };
 
 // CHECK LA LIB POUR PLUS d'INFOS - https://reactnicedates.hernansartorio.com/#installation

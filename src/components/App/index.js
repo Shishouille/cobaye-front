@@ -9,6 +9,7 @@ import 'react-nice-dates/build/style.css';
 // == Import
 import ExperiencesList from 'src/components/Experience/List/ExperiencesList';
 import ExperienceCreation from 'src/components/Experience/Creation/ExperienceCreation';
+import ExperienceParticipation from 'src/components/Experience/Participation/ExperienceParticipation';
 import ExperienceEdition from 'src/components/Experience/Edit/ExperienceEdit';
 import ExperienceDescription from 'src/components/Experience/Full/ExperienceDescription';
 import ExperienceCriterias from 'src/components/Experience/Full/ExperienceCriterias';
@@ -85,6 +86,12 @@ const App = () => (
         exact
       >
         <ExperienceCriterias />
+      </Route>
+      <Route
+        path="/experience/:id/participer"
+        exact
+      >
+        <ExperienceParticipation />
       </Route>
       <Route
         path="/profil"

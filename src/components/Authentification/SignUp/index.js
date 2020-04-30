@@ -16,28 +16,34 @@ const SignupForm = () => (
         firstName: '',
         lastName: '',
         email: '',
+        password: '',
+        passwordConfirm: '',
         acceptedTerms: false,
-        jobType: '',
+        gender: '',
+        profession: '',
+        nsc: '',
       }}
       validationSchema={Yup.object({
         firstName: Yup.string()
-          .max(15, 'Must be 15 characters or less')
-          .required('Required'),
+          .max(15, 'Votre prénom ne doit pas dépasser les 15 caractères')
+          .required('Ce champs est requis.'),
         lastName: Yup.string()
-          .max(20, 'Must be 20 characters or less')
-          .required('Required'),
+          .max(15, 'Votre nom ne doit pas dépasser les 15 caractères')
+          .required('Ce champs est requis.'),
         email: Yup.string()
-          .email('Invalid email address')
-          .required('Required'),
+          .email('Votre email n\'est pas valide.')
+          .required('Ce champs est requis.'),
+        password: Yup.string()
+          .required('Votre mot de passe est requis.'),
+        passwordConfirm: Yup.string()
+          .oneOf([Yup.ref('password'), null], 'Vos mots de passe doivent correspondre.')
+          .required('Veuillez répéter votre mot de passe.'),
         acceptedTerms: Yup.boolean()
-          .required('Required')
-          .oneOf([true], 'You must accept the terms and conditions.'),
+          .required('Ce champs est requis.')
+          .oneOf([true], 'Vous devez accepter les termes et conditions.'),
+        birthday: Yup.date('Ce champs doit être une date'),
         gender: Yup.string()
-          .oneOf(
-            ['woman', 'man', 'other'],
-            'Genre non identifié',
-          )
-          .required('Required'),
+          .required(),
       })}
       onSubmit={(values, { setSubmitting }) => {
         // values retourne un objet avec toutes mes valeurs
@@ -73,8 +79,8 @@ const SignupForm = () => (
         />
         <Input
           label="Répétez votre Mot de passe"
-          type="text"
-          name="repeat-password"
+          type="password"
+          name="passwordConfirm"
         />
         <Input
           label="Date de Naissance"

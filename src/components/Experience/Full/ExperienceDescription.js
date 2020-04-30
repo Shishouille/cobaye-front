@@ -30,6 +30,13 @@ const ExperienceDescription = () => (
       </section>
       <section>
         <div>
+          <p>Vous avez rendez-vous le machin à truc</p>
+          <button type="button">Annuler le rendez-vous</button>
+          <button type="button">Modifier le rendez-vous</button>
+        </div>
+      </section>
+      <section>
+        <div>
           <h2>Objectif de l'expérience</h2>
           <p>...</p>
         </div>
