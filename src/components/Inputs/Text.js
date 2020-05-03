@@ -2,6 +2,7 @@ import React from 'react';
 import { useField } from 'formik';
 
 import ErrorMessage from './ErrorMessage';
+import { StyledInput, StyledLabel } from './StyledInput';
 
 const Input = ({ label, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -9,8 +10,8 @@ const Input = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <>
-      <label htmlFor={props.id || props.name}>{label}</label>
-      <input {...field} {...props} />
+      <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+      <StyledInput {...field} {...props} />
       {meta.touched && meta.error ? (
         <ErrorMessage>{meta.error}</ErrorMessage>
       ) : null}

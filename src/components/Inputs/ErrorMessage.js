@@ -1,10 +1,12 @@
 import React from 'react';
 
+import StyledError from './StyledError';
+
 const ErrorMessage = ({ children }) => {
   return (
-    <div>
+    <StyledError>
       {children}
-    </div>
+    </StyledError>
   );
 };
 

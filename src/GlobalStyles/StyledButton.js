@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from 'src/styles/theme';
 
-const StyledButton = styled.button`
+const StyledButtonHome = styled.button`
     border: none;
     background-color: white;
     border-radius: .5em;
@@ -29,4 +29,32 @@ const StyledButton = styled.button`
     }
  `;
 
-export default StyledButton;
+const StyledButtonForm = styled.button`
+    border: none;
+    background-color: #001C7A;
+    color: white;
+    padding: .5em;
+    margin: .2em 0;
+    border-radius: .3em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 15em;
+    .lg {
+
+    }
+    .md {
+
+    }
+    &:hover {
+    }
+    &:focus {
+    }
+    .active {
+    }
+    .disabled {
+    }
+    @media (min-width: 768px) {
+    }
+ `;
+
+export { StyledButtonHome, StyledButtonForm };
