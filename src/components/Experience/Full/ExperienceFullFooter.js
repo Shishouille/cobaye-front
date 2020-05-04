@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { StyledButtonForm } from 'src/GlobalStyles/StyledButton';
+import StyledLink from 'src/GlobalStyles/StyledLink';
 import StyledFooter from './StyledFooter';
+
 
 const ExperienceFullFooter = () => {
   return (
     <StyledFooter>
-      <button type="button"><Link to="/experience/1/participer">Participer à l'expérience</Link> </button>
-      <button type="button">Vous avez des questions ? Contactez le chercheur.</button>
+      <StyledButtonForm type="button"><Link to="/experience/1/participer">Participer à l'expérience</Link> </StyledButtonForm>
+      <StyledLink>Vous avez des questions ? Contactez le chercheur.</StyledLink>
     </StyledFooter>
   );
 };

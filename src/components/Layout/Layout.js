@@ -3,16 +3,17 @@ import {
   Navigation, Footer, Sider, StyledLayout,
 } from '.';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, signOut, userName, isConnected }) => {
+  return(
   <StyledLayout>
-    <Sider />
+    <Sider signOut={signOut} isConnected={isConnected} />
     <div className="layout-content">
-      <Navigation />
+      <Navigation userData={userName} isConnected={isConnected} />
       <main>
         {children}
       </main>
       <Footer />
     </div>
   </StyledLayout>
-);
+);};
 export default Layout;

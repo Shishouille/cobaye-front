@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from 'src/components/Layout';
+import Layout from 'src/containers/Layout';
 import ExperienceFullHeader from './ExperienceFullHeader';
 import ExperienceFullFooter from './ExperienceFullFooter';
 import StyledExperience from './StyledExperience';

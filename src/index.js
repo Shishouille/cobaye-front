@@ -9,7 +9,11 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from 'src/store';
 
 // Composants
-import App from 'src/components/App';
+import App from 'src/containers/App';
+
+import { loadSelectionData } from 'src/actions/user';
+
+store.dispatch(loadSelectionData());
 
 // == Render
 const rootReactElement = (

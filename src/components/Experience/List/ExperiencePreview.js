@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import StyledTag from 'src/GlobalStyles/StyledTag';
 import StyledExperiencePreview from './StyledExperiencePreview';
 
 
-const ExperiencePreview = () => (
+const ExperiencePreview = ({ slug }) => (
   <StyledExperiencePreview>
     <div className="exp-main">
       <img src="" alt="Domaine" />
       <div className="exp-desc">
-        <h2>Nom de l'expérience</h2>
+        <h2><Link to={`/experience/${slug}`}>Nom de l'expérience</Link></h2>
         <h3>Université</h3>
         <StyledTag>Mots-clés</StyledTag>
         <div className="exp-time">

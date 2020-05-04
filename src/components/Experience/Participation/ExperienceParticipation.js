@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { fr } from 'date-fns/locale';
 import { DatePicker } from 'react-nice-dates';
 
-import Layout from 'src/components/Layout';
+import Layout from 'src/containers/Layout';
 import Select from 'src/components/Inputs/Select';
 import Input from 'src/components/Inputs/Text';
 import CheckBox from 'src/components/Inputs/CheckBox';

@@ -1,14 +1,16 @@
 import React from 'react';
-import Layout from 'src/components/Layout';
+import Layout from 'src/containers/Layout';
 import MessagePanel from './Panel/MessagePanel';
 import MessageList from './List/MessageList';
 
+import StyledMessageBox from './StyledMessageBox';
+
 const MessageBox = () => (
   <Layout>
-    <div>
+    <StyledMessageBox>
       <MessageList />
       <MessagePanel />
-    </div>
+    </StyledMessageBox>
   </Layout>
 );
 

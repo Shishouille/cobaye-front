@@ -12,10 +12,9 @@ export const CLEAR_FORM = 'CLEAR_FORM';
 export const LOAD_SELECTION_DATA = 'LOAD_SELECTION_DATA';
 export const GET_SELECTION_DATA = 'GET_SELECTION_DATA';
 
-export const getToken = (token, userId) => ({
+export const getToken = (token) => ({
   type: GET_TOKEN,
   token,
-  userId,
 });
 
 export const loadUserData = (token) => ({

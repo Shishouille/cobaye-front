@@ -3,7 +3,7 @@ import MessageCard from './MessageCard';
 
 const MessageList = () => {
   return (
-    <div>
+    <div className="message-list">
       <div>
       <input type="text" placeholder="Chercher un message" />
       </div>

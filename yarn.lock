@@ -900,6 +900,41 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@iconify/icons-dashicons@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-dashicons/-/icons-dashicons-1.0.9.tgz#9e7b793ee1845a00599d31117afbbaac097ad06b"
+  integrity sha512-GtHuLxtf6hAZzuruMbNaj55LKW0VMqoD4IWLnxNw4GF9DTu/HowdapTIMb4qan/tjej3+AGyWbxn2stJXfJiSg==
+
+"@iconify/icons-entypo@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-entypo/-/icons-entypo-1.0.5.tgz#0bb236da8fa5979adbbf713761fea34742f2daf8"
+  integrity sha512-MU+WosE4wWPiUqL9rhFBKzuopQW0KieNdEIaVr/hRP2ApBzAGct1gQqeIW+oH0/TLo0unRErt4meYeyNsT6NOg==
+
+"@iconify/icons-eva@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-eva/-/icons-eva-1.0.0.tgz#a3404bd78d0b7a11cb52ab4002f4799abafcfcfa"
+  integrity sha512-TxnpfkQ96eF5p0w6PM+XEoOpsfP+Bn2w2PcutfEksFpcaeX6ra8PrkY5DlTxKtDUE9LC9PcZVVGRZD7jcIDzvQ==
+
+"@iconify/icons-gridicons@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-gridicons/-/icons-gridicons-1.0.6.tgz#4c6d246c2250509a16db055efce499598d51be8e"
+  integrity sha512-YTySGg1fE/mc5d89IT4GYf8k0ld3iglBN5+H+E2FnHKN7cZ9E2/cKS3eCnYt+T+LcC6IxBSG162E9T7CkPpu1Q==
+
+"@iconify/icons-uil@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-uil/-/icons-uil-1.0.11.tgz#4a37e48447c6ce0d94441f0367c45fe56d2628f7"
+  integrity sha512-ShwIa/1l8dYOcKTuwdpHpjiaWhPxqWmMVxuxpsTJQNtBJzSe62lTE+AwxOnt8dDwEAQfn/ezHiis+mKuikuINA==
+
+"@iconify/icons-vaadin@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-vaadin/-/icons-vaadin-1.0.5.tgz#854be9db195a2b72296264776a7278a711d3fac7"
+  integrity sha512-dyXOSeqrUFCkZvNsr6sD1I0aQdFgN+BgK9mG7weTZ0khmWgJPMql9qKUXwEizU92kLwznCQz5o69dkCg38XEpA==
+
+"@iconify/react@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.1.3.tgz#ebe4d3e5f5dea23cd6a9634acd7a0a25c7414a59"
+  integrity sha512-ReZNJyr89AfED6XZIXkhsJiNv2taT3j1cTo1HVPHMsrKOz6gAYdXtD2kDWF6+GVoFUxpmnO0fMcA6yCyTf6Tow==
+
 "@pathofdev/react-tag-input@^1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@pathofdev/react-tag-input/-/react-tag-input-1.0.7.tgz#ace16c8903a65bb86f136623a761d6d505c7bd86"

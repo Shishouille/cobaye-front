@@ -7,6 +7,7 @@ import '@pathofdev/react-tag-input/build/index.css';
 import 'react-nice-dates/build/style.css';
 
 // == Import
+import LoadingPage from 'src/components/Loading';
 import ExperiencesList from 'src/components/Experience/List/ExperiencesList';
 import ExperienceCreation from 'src/components/Experience/Creation/ExperienceCreation';
 import ExperienceParticipation from 'src/components/Experience/Participation/ExperienceParticipation';
@@ -14,9 +15,9 @@ import ExperienceEdition from 'src/components/Experience/Edit/ExperienceEdit';
 import ExperienceDescription from 'src/components/Experience/Full/ExperienceDescription';
 import ExperienceCriterias from 'src/components/Experience/Full/ExperienceCriterias';
 
-import SignIn from 'src/components/Authentification/SignIn';
-import SignUp from 'src/components/Authentification/SignUp';
-import SignUpScientist from 'src/components/Authentification/SignUp/SignupScientist';
+import SignIn from 'src/containers/Authentification/SignIn';
+import SignUpCobaye from 'src/containers/Authentification/SignUp/SignUpCobaye';
+import SignUpScientist from 'src/containers/Authentification/SignUp/SignUpScientist';
 import HomePage from '../HomePage';
 import ProfilePage from '../Profile/Home';
 import MessageBox from '../MessageBox';
@@ -24,7 +25,7 @@ import Settings from '../Settings';
 
 
 // == Composant
-const App = () => (
+const App = ({ loading }) => (
   <div>
     <Switch>
       <Route
@@ -43,7 +44,7 @@ const App = () => (
         path="/inscription"
         exact
       >
-        <SignUp />
+        <SignUpCobaye />
       </Route>
       <Route
         path="/inscription/chercheur"
@@ -61,55 +62,84 @@ const App = () => (
         path="/experiences"
         exact
       >
-        <ExperiencesList />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <ExperiencesList />
+        )}
       </Route>
       <Route
         path="/experience/creation"
         exact
       >
-        <ExperienceCreation />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <ExperienceCreation />
+        )}
       </Route>
       <Route
         path="/experience/edition/:id"
         exact
       >
-        <ExperienceEdition />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <ExperienceEdition />)}
       </Route>
       <Route
         path="/experience/:id"
         exact
       >
-        <ExperienceDescription />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <ExperienceDescription />)}
       </Route>
       <Route
         path="/experience/:id/criteres"
         exact
       >
-        <ExperienceCriterias />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <ExperienceCriterias />)}
       </Route>
       <Route
         path="/experience/:id/participer"
         exact
       >
-        <ExperienceParticipation />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <ExperienceParticipation />)}
       </Route>
       <Route
         path="/profil"
         exact
       >
-        <ProfilePage />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <ProfilePage />)}
       </Route>
       <Route
         path="/messages"
         exact
       >
-        <MessageBox />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <MessageBox />)}
       </Route>
       <Route
         path="/parametres"
         exact
       >
-        <Settings />
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          <Settings />)}
       </Route>
     </Switch>
   </div>

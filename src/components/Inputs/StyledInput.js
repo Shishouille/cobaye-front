@@ -11,6 +11,7 @@ const StyledLabel = styled.label`
 
 const StyledInput = styled.input`
     border: none;
+    color: #001C7A;
     padding: .5em;
     border-bottom: 1.5px solid #001C7A;
     background-color: rgba(4, 36, 217, .03);

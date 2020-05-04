@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NavLink, Link } from 'react-router-dom';
 
-const Sider = () => (
+const Sider = ({ signOut, isConnected }) => (
   <nav className="sider">
     <div className="sider-logo">
       <img src="" alt="" />
@@ -45,9 +45,17 @@ const Sider = () => (
       ><img src="" alt="" />
         Paramètres
       </NavLink>
-      <Link to="/">
-        <img src="" alt="" /> Déconnexion
-      </Link>
+      {isConnected ? (
+        <div onClick={signOut}>
+          <Link to="/">
+            <img src="" alt="" /> Déconnexion
+          </Link>
+        </div>
+      ) : (
+          <Link to="/connexion">
+            <img src="" alt="" /> Connexion
+          </Link>
+      )}
     </div>
   </nav>
 );

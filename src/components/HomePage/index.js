@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // == Import
 import homeImage from 'src/assets/images/homeImage.svg';
 
-import { StyledButtonHome }from 'src/GlobalStyles/StyledButton';
+import { StyledButtonHome } from 'src/GlobalStyles/StyledButton';
 import StyledHome from './StyledHome';
 
 // == Composant

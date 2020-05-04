@@ -57,4 +57,28 @@ const StyledButtonForm = styled.button`
     }
  `;
 
-export { StyledButtonHome, StyledButtonForm };
+const StyledButtonIcon = styled.button`
+  border: none;
+  background-color: #001C7A;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  .lg {
+
+  }
+  .md {
+
+  }
+  &:hover {
+  }
+  &:focus {
+  }
+  .active {
+  }
+  .disabled {
+  }
+  @media (min-width: 768px) {
+  }
+`;
+
+export { StyledButtonHome, StyledButtonForm, StyledButtonIcon };

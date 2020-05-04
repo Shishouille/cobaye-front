@@ -9,7 +9,7 @@ import { fr } from 'date-fns/locale';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
 
-import Layout from 'src/components/Layout';
+import Layout from 'src/containers/Layout';
 import Select from 'src/components/Inputs/Select';
 import Input from 'src/components/Inputs/Text';
 import CheckBox from 'src/components/Inputs/CheckBox';

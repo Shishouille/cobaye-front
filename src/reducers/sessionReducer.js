@@ -4,8 +4,7 @@ import { GET_TOKEN, GET_USER_DATA, SIGN_OUT } from 'src/actions/user';
 // Initial State
 const initialState = {
   // Sign In related
-  token: null,
-  userId: null,
+  session: {},
 
   // Condtionnal State
   isConnected: false,
@@ -20,20 +19,20 @@ const sessionReducer = (state = initialState, action = {}) => {
     case GET_TOKEN:
       return {
         ...state,
-        token: action.token,
-        userId: action.userId,
+        session: action.token,
       };
     case GET_USER_DATA:
       return {
         ...state,
-        isScientist: action.data.role.name === 'scientist',
+        isScientist: action.data.user.role.name === 'Scientifique',
         userData: action.data,
+        isConnected: true,
       };
     case SIGN_OUT:
       return {
         ...state,
-        token: null,
-        userId: null,
+        session: {},
+        userData: {},
         isConnected: false,
       };
     default:

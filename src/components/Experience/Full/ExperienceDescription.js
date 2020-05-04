@@ -1,8 +1,10 @@
 import React from 'react';
 
-import Layout from 'src/components/Layout';
+import Layout from 'src/containers/Layout';
 import ExperienceFullHeader from './ExperienceFullHeader';
 import ExperienceFullFooter from './ExperienceFullFooter';
+
+import { StyledButtonForm } from 'src/GlobalStyles/StyledButton';
 import StyledExperience from './StyledExperience';
 
 const ExperienceDescription = () => (
@@ -31,8 +33,8 @@ const ExperienceDescription = () => (
       <section>
         <div>
           <p>Vous avez rendez-vous le machin à truc</p>
-          <button type="button">Annuler le rendez-vous</button>
-          <button type="button">Modifier le rendez-vous</button>
+          <StyledButtonForm type="button">Annuler le rendez-vous</StyledButtonForm>
+          <StyledButtonForm type="button">Modifier le rendez-vous</StyledButtonForm>
         </div>
       </section>
       <section>

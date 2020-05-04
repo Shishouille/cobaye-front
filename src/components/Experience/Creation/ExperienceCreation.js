@@ -9,8 +9,14 @@ import { fr } from 'date-fns/locale';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
 
+import { InlineIcon } from '@iconify/react';
+import checkmarkCircleOutline from '@iconify/icons-eva/checkmark-circle-outline';
+import addIcon from '@iconify/icons-gridicons/add';
+import circleWithMinus from '@iconify/icons-entypo/circle-with-minus';
 
-import Layout from 'src/components/Layout';
+
+
+import Layout from 'src/containers/Layout';
 import Select from 'src/components/Inputs/Select';
 import Input from 'src/components/Inputs/Text';
 import CheckBox from 'src/components/Inputs/CheckBox';
@@ -229,7 +235,8 @@ const ExperienceCreation = () => {
                           addCriterias(criterias.filter((removedCriteria) => removedCriteria.name !== criteria.name));
                           props.values[criteria.name] = '';
                         }}
-                      >Enlever ce critère
+                      >
+                        <InlineIcon icon={circleWithMinus} color="white" />Enlever ce critère
                       </StyledButtonForm>
                     </div>
                   ))
@@ -241,11 +248,12 @@ const ExperienceCreation = () => {
                   onClick={() => {
                     addCriterias([...criterias, { name: `criteria${criterias.length}` }]);
                   }}
-                >Rajouter un critère
+                >
+                  <InlineIcon icon={addIcon} color="white" /> Rajouter un critère
                 </StyledButtonForm>
               </div>
               <div>
-                <StyledButtonForm type="submit">Confirmer</StyledButtonForm>
+                <StyledButtonForm type="submit"><InlineIcon icon={checkmarkCircleOutline} color="white" />Confirmer</StyledButtonForm>
               </div>
             </StyledForm>
           </Form>

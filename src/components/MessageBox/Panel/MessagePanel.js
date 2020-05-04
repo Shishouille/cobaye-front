@@ -4,7 +4,7 @@ import MessageTyper from './MessageTyper';
 
 const MessagePanel = () => {
   return (
-    <div>
+    <div className="chat">
       <Message />
       <Message />
       <Message />

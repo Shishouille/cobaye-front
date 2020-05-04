@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Icon, InlineIcon } from '@iconify/react';
+import trashIcon from '@iconify/icons-vaadin/trash';
+import fileEditAlt from '@iconify/icons-uil/file-edit-alt';
+
+import { StyledButtonIcon } from 'src/GlobalStyles/StyledButton';
+
 const CreatedExperience = () => (
   <div>
     <div>
@@ -12,8 +18,8 @@ const CreatedExperience = () => (
       Période
     </div>
     <div>
-      <button type="button"><Link to="experience/edition/1">Editer</Link></button>
-      <button type="button">Supprimer</button>
+      <Link to="experience/edition/1"><StyledButtonIcon><Icon icon={fileEditAlt} color="white" /></StyledButtonIcon></Link>
+      <StyledButtonIcon><Icon icon={trashIcon} color="white" /></StyledButtonIcon>
     </div>
   </div>
 );
