@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 
 // Import Actions
 import {
-  loadPassationTypes,
-  loadGeneralCriterias,
   createExperience,
   saveForm,
 } from 'src/actions/experience';
@@ -16,16 +14,11 @@ const mapStateToProps = (state) => ({
   // Values
   passationsTypes: state.exp.passationsTypes,
   generalCriterias: state.exp.generalCriterias,
+  form: state.exp.form,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   // Axios Call
-  loadPassationTypes: () => {
-    dispatch(loadPassationTypes());
-  },
-  loadGeneralCriterias: () => {
-    dispatch(loadGeneralCriterias());
-  },
   createExperience: () => {
     dispatch(createExperience());
   },

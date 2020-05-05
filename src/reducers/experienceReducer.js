@@ -1,7 +1,7 @@
 // Import action.type
 
 import {
-  SAVE_FORM, CLEAR_FORM, GET_EXPERIENCES, GET_CURRENT_EXPERIENCE, GET_FILTERED_EXPERIENCES, GET_PASSATION_TYPES,
+  SAVE_FORM, CLEAR_FORM, GET_EXPERIENCES, GET_CURRENT_EXPERIENCE, GET_FILTERED_EXPERIENCES, GET_PASSATION_TYPES, GET_GENERAL_CRITERIAS,
 } from '../actions/experience';
 
 // Initial State
@@ -46,6 +46,11 @@ const experienceReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         passationsTypes: action.data,
+      };
+    case GET_GENERAL_CRITERIAS:
+      return {
+        ...state,
+        generalCriterias: action.data,
       };
     default:
       return state;

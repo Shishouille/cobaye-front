@@ -28,23 +28,17 @@ import StyledForm from './StyledForm';
 
 
 const ExperienceCreation = ({
-  loadPassationTypes,
-  loadGeneralCriterias,
   passationsTypes,
   generalCriterias,
   createExperience,
   saveForm,
+  form,
 }) => {
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const [tags, setTags] = React.useState(['experience']);
 
   const [criterias, addCriterias] = useState([]);
-
-  useEffect(() => {
-    loadPassationTypes();
-    loadGeneralCriterias();
-  }, []);
 
   return (
     <Layout>
@@ -73,6 +67,8 @@ const ExperienceCreation = ({
             .min(1, 'Une expérience ne se fait pas sans personne!'),
           time: Yup.string()
             .required('Vous devez indiquer une durée'),
+          participation: Yup.string()
+            .required('Vous devez indiquer une durée'),
           expType: Yup.string()
             .required('Vous devez indiquer le type de passation.'),
           description: Yup.string()
@@ -83,27 +79,29 @@ const ExperienceCreation = ({
         })}
         onSubmit={(values, { setSubmitting }) => {
         // values retourne un objet avec toutes mes valeurs
-          console.log({
+          const formData = {
             ...values,
             tags,
             startDate,
             endDate,
             money: !values.money,
-            criterias: values.criterias.filter((criteria) => criteria !== ''),
+            criterias: values.criterias.filter((criteria) => criteria !== '').map((criteria) => ({ criteria, category: 0 })),
             generalCriterias: {
-              gender: Object.keys(values.generalCriterias.gender),
-              age: Object.keys(values.generalCriterias.age),
-              profession: Object.keys(values.generalCriterias.profession),
-              studies: Object.keys(values.generalCriterias.studies),
+              gender: Object.keys(values.generalCriterias.gender).map((gender) => ({ gender, category: 1 })),
+              age: Object.keys(values.generalCriterias.age).map((age) => ({ age, category: 2 })),
+              profession: Object.keys(values.generalCriterias.profession).map((profession) => ({ profession, category: 2 })),
+              studies: Object.keys(values.generalCriterias.studies).map((study) => ({ study, category: 2 })),
             },
-          });
-          // setTimeout(() => {
-          //   saveForm({
-          //     ...values, tags, startDate, endDate, criterias,
-          //   });
-          //   createExperience();
-          //   setSubmitting(false);
-          // }, 400);
+          };
+          const newArray = [...formData.criterias, ...formData.generalCriterias.gender, ...formData.generalCriterias.age, ...formData.generalCriterias.profession, ...formData.generalCriterias.studies];
+          console.log(newArray);
+          setTimeout(() => {
+            saveForm({
+              ...formData, criterias: newArray,
+            });
+            createExperience();
+            setSubmitting(false);
+          }, 400);
         }}
       >
         {(props) => (
