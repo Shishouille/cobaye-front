@@ -10,7 +10,7 @@ import ProfileNotifications from './ProfileNotifications';
 import StyledProfile from './StyledProfile';
 
 
-const ProfilePage = () => (
+const ProfilePage = ({ isScientist }) => (
   <Layout>
     <StyledProfile>
       <h1>Mon Profil</h1>
@@ -25,10 +25,12 @@ const ProfilePage = () => (
         <ExperienceCard />
         <ExperienceCard />
       </div>
+      {isScientist && (
       <div>
         <h2>Vos Expériences</h2>
         <CreatedExperience />
       </div>
+      )}
       <div className="profile-main">
         <ProfileNotifications />
         <ProfileCalendar />

@@ -915,10 +915,40 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-eva/-/icons-eva-1.0.0.tgz#a3404bd78d0b7a11cb52ab4002f4799abafcfcfa"
   integrity sha512-TxnpfkQ96eF5p0w6PM+XEoOpsfP+Bn2w2PcutfEksFpcaeX6ra8PrkY5DlTxKtDUE9LC9PcZVVGRZD7jcIDzvQ==
 
+"@iconify/icons-fa-solid@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-fa-solid/-/icons-fa-solid-1.0.10.tgz#b88387bb7cf1422198816efda2a191558685de2f"
+  integrity sha512-brToelU5UL/9edUgdBcRPwaxGtU5CyyE8HaWXN9oToTaz3sC3eZETKuUrjN+TtuMBKVPFVNruiVX6ff4JNrYrw==
+
+"@iconify/icons-feather@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-feather/-/icons-feather-1.0.9.tgz#bc6fc4928511f583e2879b9d8ad418c38ef7a1d3"
+  integrity sha512-74LTZsZp9y8Qd+fsOTG4SRTp50pW6f97VB2i4G5UGoRTA3GIe9BMV9Ue1rihEgBAWRuN761CgVLkWXBdxyHazA==
+
 "@iconify/icons-gridicons@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@iconify/icons-gridicons/-/icons-gridicons-1.0.6.tgz#4c6d246c2250509a16db055efce499598d51be8e"
   integrity sha512-YTySGg1fE/mc5d89IT4GYf8k0ld3iglBN5+H+E2FnHKN7cZ9E2/cKS3eCnYt+T+LcC6IxBSG162E9T7CkPpu1Q==
+
+"@iconify/icons-ic@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-ic/-/icons-ic-1.0.11.tgz#73cd387ae1da39c38134fdabc96db44e48d37268"
+  integrity sha512-9zWp0PTlPNtYnOQjHa8R22UA9U/Lt4j3D+ojD5NONkvbprCEr056iKWiuBJnyrIvLUa7FxKK2K8dbq7CuXm4rA==
+
+"@iconify/icons-ion@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-ion/-/icons-ion-1.0.12.tgz#5ccba4ad6b3ed1c7eb0467ab2888829e1547da02"
+  integrity sha512-l+Xxqf5c3oaCISb33IEysg20AwH+NiSF6QvH9Q28fMESGkE9sj9jjskbd49e6SlcqhG4ruNWiraGB305W5Tm2w==
+
+"@iconify/icons-mdi@^1.0.100":
+  version "1.0.100"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.100.tgz#52ca805e45b25d94d21253dd657c25ded05cbbba"
+  integrity sha512-KMUU/2vc6Nw6tzawsxFWVe2YgfM/ajup0NKvvrQOLgiLidSRm73cfQSjz0jW6+1H130G/wep2BlzMt8hRVCFfg==
+
+"@iconify/icons-ri@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-ri/-/icons-ri-1.0.0.tgz#1e4746bb1e09e661388de6cd7041bf8c40933c03"
+  integrity sha512-LVJZ7SHsKKe1FYETyoP5iauakV1oxhIGmW3Jm2uneuTuT4b4Oa2ACeKLp/PE0IB7/iCmu/CmuANYK/6OCV1EPA==
 
 "@iconify/icons-uil@^1.0.11":
   version "1.0.11"

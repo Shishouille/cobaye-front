@@ -31,14 +31,17 @@ const StyledButtonHome = styled.button`
 
 const StyledButtonForm = styled.button`
     border: none;
-    background-color: #001C7A;
     color: white;
-    padding: .5em;
+    padding: .7em 0;
     margin: .2em 0;
-    border-radius: .3em;
+    border-radius: 8px;
+    background: #001C7A;
     text-align: center;
     text-transform: uppercase;
     width: 15em;
+    svg {
+      margin-right: .5em;
+    }
     .lg {
 
     }
@@ -46,8 +49,10 @@ const StyledButtonForm = styled.button`
 
     }
     &:hover {
+      background: #002499;
     }
     &:focus {
+      border-color: #002499;
     }
     .active {
     }

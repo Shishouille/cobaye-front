@@ -16,6 +16,11 @@ import {
   loadUserData,
 } from '../actions/user';
 
+import {
+  loadPassationTypes,
+  loadGeneralCriterias,
+} from 'src/actions/experience';
+
 
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -37,7 +42,6 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
 
     case SIGN_UP:
-      console.log(store.getState().user.formData);
       store.dispatch(isLoading());
       axios.put('http://localhost:3000/users/signup', {
         firstName: store.getState().user.formData.firstName,
@@ -60,7 +64,6 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           store.dispatch(isNotLoading());
-          console.log('Ca passe ?');
         });
 
       next(action);
@@ -76,8 +79,11 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(getToken(response.data));
         })
         .then(() => {
-          console.log(store.getState().ses.session);
           store.dispatch(loadUserData(store.getState().ses.session.token))
+        })
+        .then(() => {
+          store.dispatch(loadPassationTypes());
+          store.dispatch(loadGeneralCriterias());
         })
         .catch((error) => {
           console.error(error);

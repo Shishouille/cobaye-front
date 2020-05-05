@@ -3,10 +3,15 @@ import {
   Navigation, Footer, Sider, StyledLayout,
 } from '.';
 
-const Layout = ({ children, signOut, userName, isConnected }) => {
-  return(
+const Layout = ({
+  children, 
+  signOut, 
+  userName, 
+  isConnected, 
+  isScientist,
+}) => (
   <StyledLayout>
-    <Sider signOut={signOut} isConnected={isConnected} />
+    <Sider signOut={signOut} isConnected={isConnected} isScientist={isScientist} />
     <div className="layout-content">
       <Navigation userData={userName} isConnected={isConnected} />
       <main>
@@ -15,5 +20,5 @@ const Layout = ({ children, signOut, userName, isConnected }) => {
       <Footer />
     </div>
   </StyledLayout>
-);};
+);
 export default Layout;

@@ -7,8 +7,8 @@ const initialState = {
   session: {},
 
   // Condtionnal State
-  isConnected: false,
-  isScientist: false,
+  isConnected: true,
+  isScientist: true,
 
   // Data
   userData: {},
@@ -34,6 +34,7 @@ const sessionReducer = (state = initialState, action = {}) => {
         session: {},
         userData: {},
         isConnected: false,
+        isScientist: false,
       };
     default:
       return state;

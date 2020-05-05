@@ -26,7 +26,11 @@ const SignupScientist = ({
     ) : (
       <>
         <StyledForm>
-          <h1>Inscription - Cobaye </h1>
+          <h1>Inscription - Chercheur </h1>
+          <div>
+            <Link to="/inscription"><StyledButtonForm type="button">Je suis cobaye</StyledButtonForm></Link>
+            <Link to="/inscription/chercheur"><StyledButtonForm type="button">Je suis chercheur</StyledButtonForm></Link>
+          </div>
           <Formik
             initialValues={{
               firstName: '',
@@ -134,10 +138,6 @@ const SignupScientist = ({
               <div>
                 <div>
                   <Link to="/connexion"> <StyledLink>Déjà inscrit ?</StyledLink></Link>
-                </div>
-                <div>
-                  <Link to="/inscription"><StyledButtonForm type="button">Je suis cobaye</StyledButtonForm></Link>
-                  <Link to="/inscription/chercheur"><StyledButtonForm type="button">Je suis chercheur</StyledButtonForm></Link>
                 </div>
                 <div>
                   <StyledButtonForm type="submit">Confirmer</StyledButtonForm>

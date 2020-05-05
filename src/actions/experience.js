@@ -7,8 +7,8 @@ export const GET_FILTERED_EXPERIENCES = 'GET_FILTERED_EXPERIENCES';
 export const LOAD_CURRENT_EXPERIENCE = 'LOAD_CURRENT_EXPERIENCE';
 export const GET_CURRENT_EXPERIENCE = 'GET_CURRENT_EXPERIENCE';
 
-export const LOAD_PASSATION_TYPES = 'LOAD_CURRENT_EXPERIENCE';
-export const GET_PASSATION_TYPES = 'GET_CURRENT_EXPERIENCE';
+export const LOAD_PASSATION_TYPES = 'LOAD_PASSATION_TYPES';
+export const GET_PASSATION_TYPES = 'GET_PASSATION_TYPES';
 
 export const LOAD_GENERAL_CRITERIAS = 'LOAD_GENERAL_CRITERIAS';
 export const GET_GENERAL_CRITERIAS = 'GET_GENERAL_CRITERIAS';
@@ -40,8 +40,9 @@ export const loadExperiences = () => ({
   type: LOAD_EXPERIENCES,
 });
 
-export const loadCurrentExperience = () => ({
+export const loadCurrentExperience = (slug) => ({
   type: LOAD_CURRENT_EXPERIENCE,
+  slug,
 });
 
 export const loadGeneralCriterias = () => ({
@@ -73,4 +74,18 @@ export const getPassationTypes = (data) => ({
 export const getGeneralCriterias = (data) => ({
   type: GET_GENERAL_CRITERIAS,
   data,
+});
+
+// CRUD - CUD
+
+export const createExperience = () => ({
+  type: CREATE_EXPERIENCE,
+});
+
+export const updateExperience = () => ({
+  type: UPDATE_EXPERIENCE,
+});
+
+export const deleteExperience = () => ({
+  type: DELETE_EXPERIENCE,
 });

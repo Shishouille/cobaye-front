@@ -5,13 +5,11 @@ import { connect } from 'react-redux';
 import { signOut } from 'src/actions/user';
 
 // Import Component
-import Layout from 'src/components/Layout';
+import HomePage from 'src/components/HomePage';
 
 const mapStateToProps = (state) => ({
   // Values
-  userName: state.ses.userData,
   isConnected: state.ses.isConnected,
-  isScientist: state.ses.isScientist,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -21,9 +19,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-const LayoutContainer = connect(
+const HomePageContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Layout);
+)(HomePage);
 
-export default LayoutContainer;
+export default HomePageContainer;

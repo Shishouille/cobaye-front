@@ -49,8 +49,8 @@ const ExperienceFilter = () => {
         <select name="hours">
           <option value="" selected>Sélectionnez une heure</option>
           <option value="morning">Matin (7h-12h)</option>
-          <option value="afternoon">Début d'Après-Midi(12h-16h)</option>
-          <option value="evening">Fin d'Après-Midi(16h-18h)</option>
+          <option value="afternoon">Début d'Après-Midi (12h-16h)</option>
+          <option value="evening">Fin d'Après-Midi (16h-18h)</option>
         </select>
       </StyledSelect>
 

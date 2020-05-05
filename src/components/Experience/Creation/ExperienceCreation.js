@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
@@ -15,7 +15,6 @@ import addIcon from '@iconify/icons-gridicons/add';
 import circleWithMinus from '@iconify/icons-entypo/circle-with-minus';
 
 
-
 import Layout from 'src/containers/Layout';
 import Select from 'src/components/Inputs/Select';
 import Input from 'src/components/Inputs/Text';
@@ -28,12 +27,24 @@ import { StyledLabel } from 'src/components/Inputs/StyledInput';
 import StyledForm from './StyledForm';
 
 
-const ExperienceCreation = () => {
+const ExperienceCreation = ({
+  loadPassationTypes,
+  loadGeneralCriterias,
+  passationsTypes,
+  generalCriterias,
+  createExperience,
+  saveForm,
+}) => {
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const [tags, setTags] = React.useState(['experience']);
 
   const [criterias, addCriterias] = useState([]);
+
+  useEffect(() => {
+    loadPassationTypes();
+    loadGeneralCriterias();
+  }, []);
 
   return (
     <Layout>
@@ -42,27 +53,57 @@ const ExperienceCreation = () => {
         initialValues={{
           title: '',
           description: '',
+          passationType: '',
           questionnaryLink: '',
+          time: '',
+          steps: 1,
+          minParticipants: 1,
           expType: '',
+          criterias,
         }}
         validationSchema={Yup.object({
           title: Yup.string()
             .max(15, 'Votre titre est trop long')
             .required('Ce champ est requis.'),
+          steps: Yup.number()
+            .required('Vous devez préciser le nombre d\'étapes (1 minimum)')
+            .min(1, 'Une étape minimum est requise.'),
+          minParticipants: Yup.number()
+            .required('Vous devez préciser le nombre minimum de participants.')
+            .min(1, 'Une expérience ne se fait pas sans personne!'),
           time: Yup.string()
-            .required('Ce champ est requis.'),
+            .required('Vous devez indiquer une durée'),
+          expType: Yup.string()
+            .required('Vous devez indiquer le type de passation.'),
           description: Yup.string()
             .min(20, 'Votre description doit être fournie.')
-            .required('Ce champ est requis.'),
+            .required('Votre description doit être fournie.'),
           questionnaryLink: Yup.string()
             .url('Votre lien ne correspond pas à une URL.'),
         })}
         onSubmit={(values, { setSubmitting }) => {
         // values retourne un objet avec toutes mes valeurs
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          console.log({
+            ...values,
+            tags,
+            startDate,
+            endDate,
+            money: !values.money,
+            criterias: values.criterias.filter((criteria) => criteria !== ''),
+            generalCriterias: {
+              gender: Object.keys(values.generalCriterias.gender),
+              age: Object.keys(values.generalCriterias.age),
+              profession: Object.keys(values.generalCriterias.profession),
+              studies: Object.keys(values.generalCriterias.studies),
+            },
+          });
+          // setTimeout(() => {
+          //   saveForm({
+          //     ...values, tags, startDate, endDate, criterias,
+          //   });
+          //   createExperience();
+          //   setSubmitting(false);
+          // }, 400);
         }}
       >
         {(props) => (
@@ -127,12 +168,12 @@ const ExperienceCreation = () => {
                 min="1"
               />
               <Input
-                label="Nombre de participants"
+                label="Nombre de participants requis"
                 name="participation"
                 type="number"
                 min="1"
               />
-              <label htmlFor="Passation">Période de passation</label>
+              <StyledLabel htmlFor="Passation">Période de passation</StyledLabel>
               <DateRangePicker
                 startDate={startDate}
                 endDate={endDate}
@@ -163,61 +204,61 @@ const ExperienceCreation = () => {
               <h2>Critères d'inclusion</h2>
               <div>
                 <h3>Genre</h3>
-                <CheckBox label="Genre" name="woman">
+                <CheckBox label="Genre" name="generalCriterias.gender.woman">
                   Femme
                 </CheckBox>
-                <CheckBox label="Genre" name="man">
+                <CheckBox label="Genre" name="generalCriterias.gender.man">
                   Homme
                 </CheckBox>
-                <CheckBox label="Genre" name="other">
+                <CheckBox label="Genre" name="generalCriterias.gender.other">
                   Autre
                 </CheckBox>
               </div>
               <div>
                 <h3>Population</h3>
-                <CheckBox label="Population" name="baby">
+                <CheckBox label="Population" name="generalCriterias.age.baby">
                   Bébés (0-3ans)
                 </CheckBox>
-                <CheckBox label="Population" name="toddler">
+                <CheckBox label="Population" name="generalCriterias.age.toddler">
                   Bambin (3-6ans)
                 </CheckBox>
-                <CheckBox label="Population" name="child">
+                <CheckBox label="Population" name="generalCriterias.age.child">
                   Enfants (6-12ans)
                 </CheckBox>
-                <CheckBox label="Population" name="preteen">
+                <CheckBox label="Population" name="generalCriterias.age.preteen">
                   Préadolescent (12-16ans)
                 </CheckBox>
-                <CheckBox label="Population" name="teenager">
+                <CheckBox label="Population" name="generalCriterias.age.teenager">
                   Adolescent (16-18ans)
                 </CheckBox>
-                <CheckBox label="Population" name="adult">
+                <CheckBox label="Population" name="generalCriterias.age.adult">
                   Adulte (18+ ans)
                 </CheckBox>
               </div>
               <div>
-                <h3>Profession</h3>
-                <CheckBox label="Profession" name="worker">
+                <h3>Secteur de Profession</h3>
+                <CheckBox label="Profession" name="generalCriterias.profession.worker">
                   Employé
                 </CheckBox>
-                <CheckBox label="Profession" name="cadre">
+                <CheckBox label="Profession" name="generalCriterias.profession.cadre">
                   Cadre
                 </CheckBox>
               </div>
               <div>
                 <h3>Niveau d'études</h3>
-                <CheckBox label="Niveau d'études" name="bac">
+                <CheckBox label="Niveau d'études" name="generalCriterias.studies.bac">
                   BAC
                 </CheckBox>
-                <CheckBox label="Niveau d'études" name="bac-2">
+                <CheckBox label="Niveau d'études" name="generalCriterias.studies.bac2">
                   BAC+2
                 </CheckBox>
-                <CheckBox label="Niveau d'études" name="bac-3">
+                <CheckBox label="Niveau d'études" name="generalCriterias.studies.bac3">
                   BAC+5
                 </CheckBox>
               </div>
               <div>
                 <h3>Rémunération ?</h3>
-                <ToggleSwitch label="Rémunération" name="money" />
+                <ToggleSwitch label="Rémunération" name="remuneration" />
               </div>
               <div>
                 <h3>Critères Spécifiques</h3>
@@ -226,14 +267,14 @@ const ExperienceCreation = () => {
                     <div className="form-criterias">
                       <Input
                         label={`Nouveau critère ${index + 1}`}
-                        placeholder={`Entrez votre critère`}
-                        name={criteria.name}
+                        placeholder="Entrez votre critère"
+                        name={`criterias[${index}]`}
                       />
                       <StyledButtonForm
                         type="button"
                         onClick={() => {
-                          addCriterias(criterias.filter((removedCriteria) => removedCriteria.name !== criteria.name));
-                          props.values[criteria.name] = '';
+                          addCriterias(criterias.filter((removedCriteria) => removedCriteria !== criteria));
+                          props.values.criterias[index] = '';
                         }}
                       >
                         <InlineIcon icon={circleWithMinus} color="white" />Enlever ce critère

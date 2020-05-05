@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
+import { InlineIcon } from '@iconify/react';
+import loginBoxFill from '@iconify/icons-ri/login-box-fill';
+
 import Input from 'src/components/Inputs/Text';
 import StyledLink from 'src/GlobalStyles/StyledLink';
 import { StyledButtonForm } from 'src/GlobalStyles/StyledButton';
@@ -53,8 +56,8 @@ const SignIn = ({ formData, saveForm, signIn }) => (
           <div>
             <StyledLink><Link to="/inscription">Pas encore inscrit ?</Link></StyledLink>
           </div>
-          <div>
-            <StyledButtonForm type="submit">Se connecter</StyledButtonForm>
+          <div className="signin-confirm">
+            <StyledButtonForm type="submit"> <InlineIcon icon={loginBoxFill} color="white" /> Se connecter</StyledButtonForm>
             <Link to="/"><StyledButtonForm type="button">Retour</StyledButtonForm></Link>
           </div>
         </Form>

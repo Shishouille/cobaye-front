@@ -5,6 +5,10 @@ const StyledLayout = styled.div`
     display: flex;
     flex-flow: column nowrap;
 
+    h1, h2, h3, h4, p {
+        color: #001c7a;
+    }
+
     // SIDER COMPONENT
     .sider {
         color: white;
@@ -64,12 +68,15 @@ const StyledLayout = styled.div`
             overflow: hidden;
             background-color: #001c7a;
             font-size: 1em;
+            svg {
+                padding-right: .5em;
+            }
             .sider-main-menu {
                 display:flex;
                 height: 50%;
                 justify-content: space-evenly;
                 flex-flow: column nowrap;
-                padding-left: 2em;
+                padding-left: 1em;
                 padding-top: 1em;
                 width: auto;
                 text-align: start;
@@ -103,6 +110,9 @@ const StyledLayout = styled.div`
                 height: 100%;
                 width: 2em;
                 z-index: 10;
+            }
+            path {
+                fill: #001c7a;
             }
         }
         }

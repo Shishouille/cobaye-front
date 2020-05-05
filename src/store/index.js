@@ -4,6 +4,7 @@ import { persistStore } from 'redux-persist';
 
 // Import Middleware
 import userMiddleware from 'src/middlewares/userMiddleware';
+import experienceMiddleware from 'src/middlewares/experienceMiddleware';
 // Import Main Middleware
 import reducer from 'src/reducers';
 
@@ -12,6 +13,7 @@ import reducer from 'src/reducers';
 const enhancers = composeWithDevTools(
   applyMiddleware(
     userMiddleware,
+    experienceMiddleware,
   ),
 );
 

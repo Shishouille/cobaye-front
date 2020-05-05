@@ -14,7 +14,7 @@ const StyledInput = styled.input`
     color: #001C7A;
     padding: .5em;
     border-bottom: 1.5px solid #001C7A;
-    background-color: rgba(4, 36, 217, .03);
+    background-color: rgba(4, 36, 217, .05);
     border-radius: .3em;
     &::placeholder {
       color: rgba(4, 36, 217, .5);
@@ -163,6 +163,7 @@ const StyledSelect = styled.div`
 const StyledTextarea = styled.textarea`
     border: none;
     padding: .5em;
+    color: #001C7A;
     border-bottom: 1.5px solid #001C7A;
     background-color: rgba(4, 36, 217, .03);
     border-radius: .3em;

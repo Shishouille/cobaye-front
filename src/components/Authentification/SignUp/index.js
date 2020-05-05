@@ -27,6 +27,10 @@ const SignupForm = ({
       <>
         <StyledForm>
           <h1>Inscription - Cobaye </h1>
+          <div>
+            <Link to="/inscription"><StyledButtonForm type="button">Je suis cobaye</StyledButtonForm></Link>
+            <Link to="/inscription/chercheur"><StyledButtonForm type="button">Je suis chercheur</StyledButtonForm></Link>
+          </div>
           <Formik
             initialValues={{
               firstName: '',
@@ -75,39 +79,39 @@ const SignupForm = ({
             <Form>
               <div className="form-input">
                 <Input
-                    label="Prénom"
-                    name="firstName"
-                    type="text"
-                    placeholder="Sherlock"
-                  />
+                  label="Prénom"
+                  name="firstName"
+                  type="text"
+                  placeholder="Sherlock"
+                />
                 <Input
-                    label="Nom"
-                    name="lastName"
-                    type="text"
-                    placeholder="Holmes"
-                  />
+                  label="Nom"
+                  name="lastName"
+                  type="text"
+                  placeholder="Holmes"
+                />
                 <Input
-                    label="Adresse Mail"
-                    name="email"
-                    type="email"
-                    placeholder="sherlock.holmes@cobaye.com"
-                  />
+                  label="Adresse Mail"
+                  name="email"
+                  type="email"
+                  placeholder="sherlock.holmes@cobaye.com"
+                />
                 <Input
-                    label="Mot de passe"
-                    name="password"
-                    type="password"
-                  />
+                  label="Mot de passe"
+                  name="password"
+                  type="password"
+                />
                 <Input
-                    label="Répétez votre Mot de passe"
-                    type="password"
-                    name="passwordConfirm"
-                  />
+                  label="Répétez votre Mot de passe"
+                  type="password"
+                  name="passwordConfirm"
+                />
                 <Input
-                    label="Date de Naissance"
-                    name="birthday"
-                    type="date"
-                    placeholder="JJ/MM/AAAA"
-                  />
+                  label="Date de Naissance"
+                  name="birthday"
+                  type="date"
+                  placeholder="JJ/MM/AAAA"
+                />
               </div>
               <Select label="Genre" name="gender">
                 <option value="">Quel est votre genre ?</option>
@@ -124,20 +128,15 @@ const SignupForm = ({
               <Checkbox name="acceptedTerms">
                 J'accepte les termes et les conditions ci-dessous :
                 Faire un onclick sur les termes (Page à faire)
-                </Checkbox>
+              </Checkbox>
               <div>
                 <div>
-                    <Link to="/connexion"> <StyledLink>Déjà inscrit ?</StyledLink></Link>
-                  </div>
+                  <Link to="/connexion"> <StyledLink>Déjà inscrit ?</StyledLink></Link>
+                </div>
                 <div>
-                    <Link to="/inscription"><StyledButtonForm type="button">Je suis cobaye</StyledButtonForm></Link>
-                    <Link to="/inscription/chercheur"><StyledButtonForm type="button">Je suis chercheur</StyledButtonForm></Link>
-                  </div>
-                <div>
-                    <StyledButtonForm type="submit">Confirmer</StyledButtonForm>
-                    <Link to="/"><StyledButtonForm type="button">Annuler</StyledButtonForm></Link>
-                  </div>
-
+                  <StyledButtonForm type="submit">Confirmer</StyledButtonForm>
+                  <Link to="/"><StyledButtonForm type="button">Annuler</StyledButtonForm></Link>
+                </div>
               </div>
             </Form>
           </Formik>

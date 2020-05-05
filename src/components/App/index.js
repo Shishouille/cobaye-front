@@ -8,8 +8,9 @@ import 'react-nice-dates/build/style.css';
 
 // == Import
 import LoadingPage from 'src/components/Loading';
+
 import ExperiencesList from 'src/components/Experience/List/ExperiencesList';
-import ExperienceCreation from 'src/components/Experience/Creation/ExperienceCreation';
+import ExperienceCreation from 'src/containers/Experience/Creation';
 import ExperienceParticipation from 'src/components/Experience/Participation/ExperienceParticipation';
 import ExperienceEdition from 'src/components/Experience/Edit/ExperienceEdit';
 import ExperienceDescription from 'src/components/Experience/Full/ExperienceDescription';
@@ -18,8 +19,8 @@ import ExperienceCriterias from 'src/components/Experience/Full/ExperienceCriter
 import SignIn from 'src/containers/Authentification/SignIn';
 import SignUpCobaye from 'src/containers/Authentification/SignUp/SignUpCobaye';
 import SignUpScientist from 'src/containers/Authentification/SignUp/SignUpScientist';
-import HomePage from '../HomePage';
-import ProfilePage from '../Profile/Home';
+import ProfilePage from 'src/containers/Profile/Home';
+import HomePage from 'src/containers/HomePage';
 import MessageBox from '../MessageBox';
 import Settings from '../Settings';
 

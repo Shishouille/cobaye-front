@@ -11,6 +11,11 @@ const StyledForm = styled.div`
       display: flex;
       flex-direction: column;
     }
+    .signin-confirm {
+      display: flex;
+      margin: 1em 0;
+      justify-content: space-around;
+    }
     @media (min-width: 768px) {
 
     }
