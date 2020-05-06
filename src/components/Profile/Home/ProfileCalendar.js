@@ -6,20 +6,34 @@ import 'react-calendar/dist/Calendar.css';
 
 const ProfileCalendar = () => {
   const [date, changeDate] = useState(new Date());
+  const [experiences, showExperiences] = useState(false);
+
+  const dates = [new Date(2020, 4, 20), new Date(2020, 4, 10)];
+
   const seeExperience = (value) => {
-    // Permet de se rendre à la liste d'expérience de ce jour
-    // Trier les expériences du scientifique et leur période
-    alert(`J'ai cliqué à ce jour : ${value}`);
+    const selectionFind = dates.find((comparedDate) => comparedDate.getTime() === value.getTime());
+    return selectionFind ? showExperiences(true) : showExperiences(false);
   };
-  console.log(date);
+
   return (
     <div className="calendar">
       <h2>Calendrier</h2>
       <div>
+        {experiences && (
+          <div>
+            <h4>Vous avez rendez-vous :</h4>
+            <p>Expérience 1 : Le {date.getDate()} {date.getMonth()} à {date.getHours()} : {date.getMinutes()}</p>
+          </div>
+        )}
         <Calendar
+          locale="fr"
           onChange={changeDate}
           value={date}
           onClickDay={seeExperience}
+          tileClassName={({ date }) => {
+            const selectionFind = dates.find((comparedDate) => comparedDate.getTime() === date.getTime());
+            return selectionFind ? 'selected' : '';
+          }}
         />
       </div>
     </div>

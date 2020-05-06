@@ -5,10 +5,20 @@ import MessageTyper from './MessageTyper';
 const MessagePanel = () => {
   return (
     <div className="chat">
-      <Message />
-      <Message />
-      <Message />
-      <Message />
+      <div className="messages-wrapper">
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+        <Message />
+      </div>
       <div>
         <MessageTyper />
       </div>

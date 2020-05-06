@@ -59,6 +59,7 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "@iconify/icons-bx": "^1.0.3",
     "@iconify/icons-dashicons": "^1.0.9",
     "@iconify/icons-entypo": "^1.0.5",
     "@iconify/icons-eva": "^1.0.0",

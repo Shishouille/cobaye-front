@@ -17,3 +17,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-size: 1.2rem;
 }
+
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    opacity: 10%;
+    }
+  ::-webkit-scrollbar-track {
+  background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 5px rgba(136, 136, 136, .1);
+  border-radius: 2em;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background: rgba(136, 136, 136, .3);
+  }

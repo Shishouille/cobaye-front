@@ -30,11 +30,26 @@ const StyledProfile = styled.div`
   }
   .profile-main {
     display: flex;
+    flex-direction: column;
     .notifications {
-      width: 70%;
+      width: 100%;
     }
     .calendar {
-      width: 30%;
+      width: 100%;
+      .selected {
+        background-color: #001c7a;
+        color: white;
+        border-radius: .3em;
+      }
+    }
+    @media (min-width: 768px) {
+      flex-direction: row;
+      .notifications {
+        width: 60%;
+      }
+      .calendar {
+        width: 40%;
+      }
     }
   }
  `;

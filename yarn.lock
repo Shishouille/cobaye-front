@@ -900,6 +900,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@iconify/icons-bx@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-bx/-/icons-bx-1.0.3.tgz#490206b3ded7f813be654b551c64548b08d7ebd6"
+  integrity sha512-CgqM+XcypQDRCmuTZj3SlbZUGr0uK69vFc7GeBfJUKBZW/yelZ35I6ot1tVpkF/UrQebpRGRDmOFGRp/3z/SnQ==
+
 "@iconify/icons-dashicons@^1.0.9":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@iconify/icons-dashicons/-/icons-dashicons-1.0.9.tgz#9e7b793ee1845a00599d31117afbbaac097ad06b"
