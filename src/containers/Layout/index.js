@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 // Import Actions
 import { signOut } from 'src/actions/user';
 
+import { loadPassationTypes, loadGeneralCriterias } from 'src/actions/experience';
+
 // Import Component
 import Layout from 'src/components/Layout';
 

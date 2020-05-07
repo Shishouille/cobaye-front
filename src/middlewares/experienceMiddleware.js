@@ -128,16 +128,18 @@ const experienceMiddleware = (store) => (next) => (action) => {
           Authorization: `Bearer ${store.getState().ses.token}`,
         },
         data: {
-          name: store.getState().exp.form.name,
+          name: store.getState().exp.form.title,
           description: store.getState().exp.form.description,
           tags: store.getState().exp.form.tags,
           criterias: store.getState().exp.form.criterias,
-          passation: store.getState().exp.form.passation,
+          passation: store.getState().exp.form.passationType,
+          participation: store.getState().exp.form.participation,
           questionnaryLink: store.getState().exp.form.questionnaryLink,
           time: store.getState().exp.form.time,
           steps: store.getState().exp.form.steps,
-          fromDate: store.getState().exp.form.fromDate,
-          toDate: store.getState().exp.form.toDate,
+          remuneration: store.getState().exp.form.money,
+          fromDate: store.getState().exp.form.startDate,
+          toDate: store.getState().exp.form.endDate,
         },
       })
         .then((response) => {

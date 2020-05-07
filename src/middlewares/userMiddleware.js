@@ -81,10 +81,6 @@ const userMiddleware = (store) => (next) => (action) => {
         .then(() => {
           store.dispatch(loadUserData(store.getState().ses.session.token))
         })
-        .then(() => {
-          store.dispatch(loadPassationTypes());
-          store.dispatch(loadGeneralCriterias());
-        })
         .catch((error) => {
           console.error(error);
         })

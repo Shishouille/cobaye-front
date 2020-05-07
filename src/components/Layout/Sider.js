@@ -15,7 +15,11 @@ import logoutBoxFill from '@iconify/icons-ri/logout-box-fill';
 import messageSquare from '@iconify/icons-feather/message-square';
 import loginBoxFill from '@iconify/icons-ri/login-box-fill';
 
-const Sider = ({ signOut, isConnected, isScientist }) => (
+const Sider = ({
+  signOut, 
+  isConnected, 
+  isScientist,
+}) => (
   <nav className="sider">
     <div className="sider-logo">
       <img src="" alt="" />
@@ -74,5 +78,4 @@ const Sider = ({ signOut, isConnected, isScientist }) => (
     </div>
   </nav>
 );
-
 export default Sider;

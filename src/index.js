@@ -12,8 +12,11 @@ import { store, persistor } from 'src/store';
 import App from 'src/containers/App';
 
 import { loadSelectionData } from 'src/actions/user';
+import { loadPassationTypes, loadGeneralCriterias, } from 'src/actions/experience';
 
 store.dispatch(loadSelectionData());
+store.dispatch(loadPassationTypes());
+store.dispatch(loadGeneralCriterias());
 
 // == Render
 const rootReactElement = (

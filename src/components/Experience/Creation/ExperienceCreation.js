@@ -52,7 +52,6 @@ const ExperienceCreation = ({
           time: '',
           steps: 1,
           minParticipants: 1,
-          expType: '',
           criterias,
         }}
         validationSchema={Yup.object({
@@ -89,8 +88,8 @@ const ExperienceCreation = ({
             generalCriterias: {
               gender: Object.keys(values.generalCriterias.gender).map((gender) => ({ gender, category: 1 })),
               age: Object.keys(values.generalCriterias.age).map((age) => ({ age, category: 2 })),
-              profession: Object.keys(values.generalCriterias.profession).map((profession) => ({ profession, category: 2 })),
-              studies: Object.keys(values.generalCriterias.studies).map((study) => ({ study, category: 2 })),
+              profession: Object.keys(values.generalCriterias.profession).map((profession) => ({ profession, category: 3 })),
+              studies: Object.keys(values.generalCriterias.studies).map((study) => ({ study, category: 4 })),
             },
           };
           const newArray = [...formData.criterias, ...formData.generalCriterias.gender, ...formData.generalCriterias.age, ...formData.generalCriterias.profession, ...formData.generalCriterias.studies];
@@ -99,7 +98,7 @@ const ExperienceCreation = ({
             saveForm({
               ...formData, criterias: newArray,
             });
-            createExperience();
+            // createExperience();
             setSubmitting(false);
           }, 400);
         }}
@@ -129,10 +128,9 @@ const ExperienceCreation = ({
               />
               <Select label="Type de Passation" name="expType">
                 <option value="">Quel est le type de Passation ?</option>
-                <option value="questionnary">Questionnaire</option>
-                <option value="meeting">Entretien</option>
-                <option value="experience">Expérience</option>
-                <option value="observation">Observation</option>
+                {passationsTypes.map((passation) => (
+                  <option value={passation._id}>{passation.name}</option>
+                ))}
               </Select>
               {props.values.expType === 'questionnary'
           && (
@@ -152,12 +150,13 @@ const ExperienceCreation = ({
                 <option value="15">15min</option>
                 <option value="30">30min</option>
                 <option value="45">45min</option>
-                <option value="100">1h00</option>
-                <option value="115">1h15</option>
-                <option value="130">1h30</option>
-                <option value="145">1h45</option>
-                <option value="200">2h</option>
-                <option value="250">2h+</option>
+                <option value="1:00">1h00</option>
+                <option value="1:15">1h15</option>
+                <option value="1:30">1h30</option>
+                <option value="1:45">1h45</option>
+                <option value="2:00">2h</option>
+                <option value="2:30">2h30</option>
+                <option value="3:00">3h+</option>
               </Select>
               <Input
                 label="Nombre d'étapes"
@@ -202,6 +201,13 @@ const ExperienceCreation = ({
               <h2>Critères d'inclusion</h2>
               <div>
                 <h3>Genre</h3>
+                {/* {generalCriterias
+                  .filter((currentCriteria) => currentCriteria.category === 1)
+                  .map((criteria) => (
+                    <CheckBox label="Genre" name={`generalCriterias.gender.${criteria._id}`}>
+                      {criteria.name}
+                    </CheckBox>
+                  ))} */}
                 <CheckBox label="Genre" name="generalCriterias.gender.woman">
                   Femme
                 </CheckBox>
@@ -214,6 +220,13 @@ const ExperienceCreation = ({
               </div>
               <div>
                 <h3>Population</h3>
+                {/* {generalCriterias
+                  .filter((currentCriteria) => currentCriteria.category === 2)
+                  .map((criteria) => (
+                    <CheckBox label="Genre" name={`generalCriterias.age.${criteria._id}`}>
+                      {criteria.name}
+                    </CheckBox>
+                  ))} */}
                 <CheckBox label="Population" name="generalCriterias.age.baby">
                   Bébés (0-3ans)
                 </CheckBox>
@@ -235,6 +248,13 @@ const ExperienceCreation = ({
               </div>
               <div>
                 <h3>Secteur de Profession</h3>
+                {/* {generalCriterias
+                  .filter((currentCriteria) => currentCriteria.category === 3)
+                  .map((criteria) => (
+                    <CheckBox label="Genre" name={`generalCriterias.profession.${criteria._id}`}>
+                      {criteria.name}
+                    </CheckBox>
+                  ))} */}
                 <CheckBox label="Profession" name="generalCriterias.profession.worker">
                   Employé
                 </CheckBox>
@@ -244,6 +264,13 @@ const ExperienceCreation = ({
               </div>
               <div>
                 <h3>Niveau d'études</h3>
+                {/* {generalCriterias
+                  .filter((currentCriteria) => currentCriteria.category === 4)
+                  .map((criteria) => (
+                    <CheckBox label="Genre" name={`generalCriterias.studies.${criteria._id}`}>
+                      {criteria.name}
+                    </CheckBox>
+                  ))} */}
                 <CheckBox label="Niveau d'études" name="generalCriterias.studies.bac">
                   BAC
                 </CheckBox>

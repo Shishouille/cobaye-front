@@ -4,14 +4,18 @@ import {
 } from '.';
 
 const Layout = ({
-  children, 
-  signOut, 
-  userName, 
-  isConnected, 
+  children,
+  signOut,
+  userName,
+  isConnected,
   isScientist,
 }) => (
   <StyledLayout>
-    <Sider signOut={signOut} isConnected={isConnected} isScientist={isScientist} />
+    <Sider
+      signOut={signOut}
+      isConnected={isConnected}
+      isScientist={isScientist}
+    />
     <div className="layout-content">
       <Navigation userData={userName} isConnected={isConnected} />
       <main>
